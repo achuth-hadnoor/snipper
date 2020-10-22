@@ -6,10 +6,22 @@ import {
     Settings,
     New
 } from './pages'
+import { connect } from 'react-redux'
 
-export default function RouterView() {
-    return (
-        <Router>
+interface HomePageProps{
+
+}
+
+interface HomePageState{}
+
+class RouterView extends React.Component<HomePageProps,HomePageState>{
+    componentDidMount(){
+        console.log(this.props);
+        
+    }
+    render(){
+        return(
+              <Router>
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/new" component={New} />
@@ -17,5 +29,11 @@ export default function RouterView() {
                 <Route path="/Settings" component={Settings} />
             </Switch>
         </Router>
-    )
-}
+        )
+    }
+} 
+const mapStateToProps = ()=>({ 
+})
+const MapStateToState = ()=>({ 
+})
+export default connect(mapStateToProps,MapStateToState)(RouterView)
