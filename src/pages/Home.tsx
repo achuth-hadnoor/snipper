@@ -1,9 +1,10 @@
 import React from 'react'
+import { Header } from '../components'
 
 const App = ()=>{
     return(
         <div>
-            Home
+            <Header text="Home"/>
         </div>
     )
 }
