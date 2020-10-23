@@ -1,21 +1,14 @@
-import { User } from "../../reducers/user/types";
+import { SET_USER, UPDATE_USER,REMOVE_USER } from "."; 
 
-export const SET_USER = 'SET_USER';
-export const UPDATE_USER = 'UPDATE_USER';
-export const REMOVE_USER = 'REMOVE_USER';
-
-interface SetUserActions {
-    type: typeof SET_USER,
-    user: User
+interface SET_USERACTION{
+    type : typeof SET_USER 
 }
 
-interface UpdateUserActions {
-    type: typeof UPDATE_USER,
-    user: User
-}
-interface RemoveUserActions {
-    type: typeof REMOVE_USER,
-    user: User
+interface UPDATE_USERACTION{
+    type : typeof UPDATE_USER 
 }
 
-export type UserActionsTypes = SetUserActions | UpdateUserActions | RemoveUserActions 
+interface REMOVE_USERACTION{
+    type : typeof REMOVE_USER  
+}
+export type userActionsTypes = SET_USERACTION |  UPDATE_USERACTION | REMOVE_USERACTION;

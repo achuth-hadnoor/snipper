@@ -1,12 +1,9 @@
-import {createStore, combineReducers} from 'redux'
-import userReducer from './reducers/user'
-
-export const rootReducer = combineReducers({
+import { createStore,combineReducers } from 'redux'
+import {userReducer} from './reducers/user'
+const rootReducers = combineReducers({
     user: userReducer
 })
 
-export type AppState = ReturnType<typeof rootReducer>
+type AppState = ReturnType<typeof rootReducers>;
 
-export const store = createStore(
-    rootReducer
-)
+export const Store = createStore(rootReducers);

@@ -1,23 +1,25 @@
-import { SET_USER, UserActionsTypes } from "../../actions/user/types";
-import { User } from "./types";
+import { Reducer, Action } from "redux";
+import { SET_USER, UPDATE_USER, REMOVE_USER } from "../../actions/user"; 
+import { userActionsTypes } from "../../actions/user/types";
+import { User } from "../../actions/types";
 
-const defaultState : User = {
-     name:'',
-     timestamp: Date.now(),
-     userID:0
+const defaultState: User = {
+    id: 0,
+    name: '',
+    uid: 0,
+    darkmode: false
 }
 
-const userReducer = (state = defaultState, action: UserActionsTypes): User => {
+export const userReducer: Reducer<User, Action> = (state  = defaultState, action: userActionsTypes) => {
+ 
     switch (action.type) {
         case SET_USER:
-            let {user} = action
-            return{
-                ...state,
-                ...user
-            }
+            return state; 
+        case UPDATE_USER:
+            return state;
+        case REMOVE_USER:
+            return state
         default:
             return state;
     }
 }
-
-export default userReducer;

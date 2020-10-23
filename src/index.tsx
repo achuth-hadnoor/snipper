@@ -4,11 +4,11 @@ import { Provider } from 'react-redux'
 
 import * as serviceWorker from './serviceWorker';
 import Router from './Router';
-import {store} from './Store'
+import {Store} from './Store'
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={store}>
+        <Provider store={Store}>
             <Router />
         </Provider>
     </React.StrictMode>,
